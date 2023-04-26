@@ -49,7 +49,7 @@ def c_sub():
 def c_mul():
     equation.set(equation.get() + "*")
 def c_div():
-    equation.set(equation.get() + "/")  # divide by zero?!
+    equation.set(equation.get() + "/") 
 def c_dec():
     equation.set(equation.get() + ".")
 def c_per():
