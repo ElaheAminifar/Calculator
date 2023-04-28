@@ -11,56 +11,68 @@ frame = t.Frame(window)
 frame.pack()
 
 # StringVar() is part of * in line 3
-equation = StringVar()
-expression_field = t.Entry(frame, textvariable=equation)
+expression = StringVar()
+expression_field = t.Entry(frame, textvariable=expression)
 expression_field.grid(row=1, column=0, columnspan=4)
+
+
+history = []
+def save_checkpoint(expression_value):
+    history.append(expression_value)
+    print(history)
+
 
 # defining a function to compute the mathematical operations
 def calculate():
-    equation.set(eval(equation.get()))
+    expression.set(eval(expression.get()))
+    save_checkpoint(expression.get())
 
 # defining the numbers on the calculator
 def c0():
-    equation.set(equation.get() + "0")
+    expression.set(expression.get() + "0")
 def c1():
-    equation.set(equation.get() + "1")
+    expression.set(expression.get() + "1")
 def c2():
-    equation.set(equation.get() + "2")
+    expression.set(expression.get() + "2")
 def c3():
-    equation.set(equation.get() + "3")
+    expression.set(expression.get() + "3")
 def c4():
-    equation.set(equation.get() + "4")
+    expression.set(expression.get() + "4")
 def c5():
-    equation.set(equation.get() + "5")
+    expression.set(expression.get() + "5")
 def c6():
-    equation.set(equation.get() + "6")
+    expression.set(expression.get() + "6")
 def c7():
-    equation.set(equation.get() + "7")
+    expression.set(expression.get() + "7")
 def c8():
-    equation.set(equation.get() + "8")
+    expression.set(expression.get() + "8")
 def c9():
-    equation.set(equation.get() + "9")
-def c_smile():
-    equation.set(equation.get() + " Well done :)")
+    expression.set(expression.get() + "9")
+
+# You can also see the history list in the program's output
+def c_restore_checkpoint():
+    expression.set(history[-2])
+    del history[-1]
+
 def c_sum():
-    equation.set(equation.get() + "+")
+    expression.set(expression.get() + "+")
 def c_sub():
-    equation.set(equation.get() + "-")
+    expression.set(expression.get() + "-")
 def c_mul():
-    equation.set(equation.get() + "*")
+    expression.set(expression.get() + "*")
 def c_div():
-    equation.set(equation.get() + "/") 
+    expression.set(expression.get() + "/")  # divide by zero?!
 def c_dec():
-    equation.set(equation.get() + ".")
+    expression.set(expression.get() + ".")
 def c_per():
-    equation.set(equation.get() + "*0.01")  # Multiply by 0.01 to find the percentage
+    expression.set(expression.get() + "*0.01")  # Multiply by 0.01 to find the percentage
 def c_ac():
-    equation.set("")
+    expression.set("")
 
 def change_sign():
-    numbers = equation.get()
+    numbers = expression.get()
     numbers = get_change_sign(numbers)
-    equation.set(numbers)
+    expression.set(numbers)
 
 # defining a function with an argument to return
 def get_change_sign(numbers):
@@ -109,7 +121,7 @@ cal_btn_sum.grid(row=5, column=3)
 
 cal_btn0 = t.Button(frame, text='0', command=c0)
 cal_btn0.grid(row=6, column=0)
-cal_btn_smile = t.Button(frame, text=':)', command=c_smile)
+cal_btn_smile = t.Button(frame, text='←', command=c_restore_checkpoint)
 cal_btn_smile.grid(row=6, column=1)
 cal_btn_dec = t.Button(frame, text='.', command=c_dec)
 cal_btn_dec.grid(row=6, column=2)
