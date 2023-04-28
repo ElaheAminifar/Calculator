@@ -61,7 +61,7 @@ def c_sub():
 def c_mul():
     expression.set(expression.get() + "*")
 def c_div():
-    expression.set(expression.get() + "/")  # divide by zero?!
+    expression.set(expression.get() + "/") 
 def c_dec():
     expression.set(expression.get() + ".")
 def c_per():
