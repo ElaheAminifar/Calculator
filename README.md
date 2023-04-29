@@ -1,7 +1,7 @@
 This is a program about calculator.
 
 Requirement:
-- MacOS/Windows
+- MacOS/Microsoft Windows
 - Python IDLE, Version 3.11.1
 
 
