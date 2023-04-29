@@ -4,8 +4,10 @@ Requirement:
 - MacOS/Windows
 - Python IDLE, Version 3.11.1
 
+
 Library:
 - Tkinter
+
 
 Description:
 - It contains all the primary operators: addition, subtraction, multiply, division. 
