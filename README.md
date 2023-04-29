@@ -1,11 +1,11 @@
 This is a program about calculator.
 
 Requirement:
-o MacOS/Windows
-o Python IDLE, Version 3.11.1
+- MacOS/Windows
+- Python IDLE, Version 3.11.1
 
 Library:
-o Tkinter
+- Tkinter
 
 Description:
 o	It contains all the primary operators: addition, subtraction, multiply, division. 
