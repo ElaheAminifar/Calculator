@@ -65,7 +65,7 @@ def c_div():
 def c_dec():
     expression.set(expression.get() + ".")
 def c_per():
-    expression.set(expression.get() + "*0.01")  # Multiply by 0.01 to find the percentage
+    expression.set(expression.get() + "*0.01") 
 def c_ac():
     expression.set("")
 
